@@ -20,6 +20,7 @@ try{
         INSERT INTO Users(nom,prenom,dateNaissance,pseudo,email,points,role,immunite)
         VALUES (:nom, :prenom, :dateNaissance, :pseudo, :email, :points, :role, :immunite)
     ");
+    
     $sth->execute(array(
                         ':nom' => $nom,
                         ':prenom' => $prenom,
@@ -29,7 +30,7 @@ try{
                         ':points' => $points,
                         ':role' => $role,
                         ':immunite' => $immunite));
-    echo "$prenom $nom dit $pseudo a été ajouté ";
+    echo "L'utilisateur $prenom $nom dit $pseudo a été ajouté ";
 }
      
 catch(PDOException $e){
