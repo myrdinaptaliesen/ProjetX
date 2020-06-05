@@ -6,6 +6,8 @@
     <title>ProjetX</title>
 </head>
 <body>
+<h1>ProjetX</h1>
+<h2>La course aux points</h2>
 <?php
 try{
     $pdo = new PDO('mysql:host=localhost;dbname=ProjetX;port=3308','root','',
@@ -16,15 +18,19 @@ try{
     $sth = $pdo->prepare("SELECT * FROM users");
     $sth->execute();
    
-    /*Retourne un tableau associatif pour chaque entrée de notre table
-     *avec le nom des colonnes sélectionnées en clefs*/
+
     $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
    
-    /*print_r permet un affichage lisible des résultats,
-     *<pre> rend le tout un peu plus lisible*/
-    echo '<pre>';
-    print_r($resultat);
-    echo '</pre>';
+    
+    ?>
+    <table border=1>
+    <?php
+    foreach ($resultat as $key => $value) {
+        echo "<tr><td>".$value['nom']." ".$value['prenom']."</td><td>".$value['points']."pts</td><tr>";
+    }
+    ?>
+    </table>
+<?php
 }
      
 catch(PDOException $e){
