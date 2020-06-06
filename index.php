@@ -38,5 +38,7 @@ catch(PDOException $e){
 }
 
 ?>
+
+<a href="administration.php">Page admin</a>
 </body>
 </html>
