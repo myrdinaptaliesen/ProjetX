@@ -5,9 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Création d'utilisateur</title>
+    <link rel="stylesheet" href="css/styles.css" media="all">
 </head>
-
 <body>
+<div class="website">
+  <header class="header" role="banner">
+    <nav class="navigation" role="navigation">
+      <ul class="navigation-list">
+        <li class="navigation-item"><a class="navigation-link" href="index.php">Accueil</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="administration.php">Administration</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="#">Truc</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="#">Machin</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="#">Chose</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main" class="main admin">
+    <div class="one_half">
     <h2>Création d'un utilisateur</h2>
     <form action="form.php" method="post">
         <label>Nom</label>
@@ -42,7 +57,8 @@
 
         <input type="submit" value="Ajouter un utilisateur"></input>
     </form>
-
+    </div>
+<div class="one_half">
 <h2>Ajout de points</h2>
     <?php
     try {
@@ -95,6 +111,9 @@
     ?>
 
 <a href="index.php">Retour à la page d'accueil</a>
+</div>
+  </main>
+</div>
 
 </body>
 
