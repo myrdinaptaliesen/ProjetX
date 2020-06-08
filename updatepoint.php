@@ -9,17 +9,16 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    
     $user_id = $_POST['user_id'];
-    var_dump($user_id);
     $points = $_POST['points'];
 
     $sth = $pdo->prepare("
         UPDATE users
-        SET points = '$points'
+        SET points = $points
         WHERE id = $user_id
     ");
     
     $sth->execute();
-    echo "Votre modification a bien été effectuée.";
+
     //On redirige l'utilisateur vers la page d'administration lorsque la modification est effectuée
     header("location:administration.php");
     
