@@ -94,9 +94,7 @@
                             <input type="submit" value="Appliquer">
                         </form>
                     </td>
-                    <td>
-
-                    </td>
+                   
                 </tr>
             <?php 
             }
@@ -114,6 +112,8 @@
 </div>
   </main>
 </div>
+
+
 
 </body>
 
